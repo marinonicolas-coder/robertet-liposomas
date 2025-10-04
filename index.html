@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solução lipossomal para encapsulação de fragrâncias naturais Robertet">
+    <title>Robertet - Inovação Lipossomal para Fragrâncias Naturais</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 25px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .language-toggle button {
+            background: none;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #6c757d;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .language-toggle button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .language-toggle button:hover:not(.active) {
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.3);
+        }
+
+        .insight-box h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .insight-box p {
+            font-size: 1.15em;
+            line-height: 1.7;
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            font-weight: 600;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .challenge-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .challenge-box h3 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .solution-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .solution-card h4 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .solution-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .solution-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .claim-highlight {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+        }
+
+        .claim-highlight h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border: none;
+            color: white;
+        }
+
+        .claim-highlight p {
+            font-size: 1.25em;
+            line-height: 1.7;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 20px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+
+        .benefit-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .benefit-label {
+            color: #6c757d;
+            font-size: 1.1em;
+        }
+
+        .technical-specs {
+            background: #e3f2fd;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .technical-specs h3 {
+            color: #1976d2;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1976d2;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: #1976d2;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .footer a {
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+            }
+
+            .language-toggle button {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button onclick="setLanguage('pt')" id="btn-pt" class="active">🇧🇷 PT</button>
+        <button onclick="setLanguage('fr')" id="btn-fr">🇫🇷 FR</button>
+    </div>
+
+    <div class="container">
+        <!-- PORTUGUÊS -->
+        <div id="content-pt" class="lang-content active">
+            <div class="header">
+                <h1>🌿 Inovação Lipossomal</h1>
+                <div class="subtitle">Solução Avançada para Encapsulação de Fragrâncias Naturais Robertet</div>
+            </div>
+
+            <div class="content">
+                <div class="insight-box">
+                    <h2>💡 Insight para Robertet</h2>
+                    <p><strong>O desafio:</strong> As fragrâncias naturais que a Robertet domina tão bem (baunilha de Madagascar, absolutos naturais, extratos florais) são as mais voláteis e frágeis. Sua estabilidade e longevidade continuam sendo um grande desafio nas formulações modernas, especialmente diante das exigências de "FUTURING NATURALS" e cleanRscent.</p>
+                    <p style="margin-top: 15px;"><strong>A oportunidade:</strong> Uma tecnologia lipossomal natural, já validada farmaceuticamente, que pode revolucionar a forma como suas criações naturais são protegidas, estabilizadas e liberadas.</p>
+                </div>
+
+                <div class="section">
+                    <h2>🎯 O Desafio Robertet 2025</h2>
+                    <div class="challenge-box">
+                        <h3>Suas Fragrâncias Naturais Enfrentam 4 Problemas</h3>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #dc3545; font-weight: bold;">1.</span>
+                                <strong>Volatilidade excessiva</strong> - Notas de topo naturais evaporam muito rapidamente
+                            </li>
+                            <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #dc3545; font-weight: bold;">2.</span>
+                                <strong>Oxidação</strong> - Degradação de compostos naturais frágeis (aldeídos, terpenos)
+                            </li>
+                            <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #dc3545; font-weight: bold;">3.</span>
+                                <strong>Instabilidade</strong> - Sensibilidade à luz, calor e pH nas formulações
+                            </li>
+                            <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #dc3545; font-weight: bold;">4.</span>
+                                <strong>Incompatibilidade aquosa</strong> - Dificuldade de integração em produtos à base de água
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="claim-highlight">
+                    <h2>A Solução: LIPOSOMAS 90-PL</h2>
+                    <p><strong>Encapsule suas fragrâncias naturais em lipossomos biomiméticos que protegem, estabilizam e liberam de forma controlada.</strong></p>
+                    <p style="margin-top: 20px; font-size: 1.1em;">Transforme um perfume que dura 2 horas em uma experiência olfativa de 12+ horas, mantendo-se 100% natural e limpo.</p>
+                </div>
+
+                <div class="section">
+                    <h2>🔬 Como Funciona</h2>
+                    <div class="solution-grid">
+                        <div class="solution-card">
+                            <h4>🛡️ Proteção</h4>
+                            <ul>
+                                <li>Membrana fosfolipídica protege moléculas voláteis</li>
+                                <li>Barreira contra oxidação e UV</li>
+                                <li>Estabilidade térmica melhorada</li>
+                                <li>Conservação das notas originais</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>⏱️ Liberação Controlada</h4>
+                            <ul>
+                                <li>Difusão progressiva por 8-12h</li>
+                                <li>Notas de topo que persistem</li>
+                                <li>Intensidade olfativa constante</li>
+                                <li>Sem efeito "flash and fade"</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>💧 Compatibilidade Aquosa</h4>
+                            <ul>
+                                <li>Domínios hidrofílicos + lipofílicos</li>
+                                <li>Integração fácil em fase aquosa</li>
+                                <li>Estável em géis, loções, sprays</li>
+                                <li>Sem separação de fase</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>🌿 100% Limpo & Natural</h4>
+                            <ul>
+                                <li>Fosfolipídios de origem natural</li>
+                                <li>Biodegradável</li>
+                                <li>Compatível cleanRscent</li>
+                                <li>Alinhado FUTURING NATURALS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>📊 Impacto Mensurável</h2>
+                    <div class="benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-number">+300%</span>
+                            <div class="benefit-label">Longevidade das notas de topo naturais<br><em style="font-size: 0.85em; color: #888;">(Fonte: Liposomal encapsulation fragrance studies, BOC Sciences 2025)</em></div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-number">85%</span>
+                            <div class="benefit-label">Redução da volatilização imediata<br><em style="font-size: 0.85em; color: #888;">(Estudos encapsulação micropartículas, Wiley 2023)</em></div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-number">12h</span>
+                            <div class="benefit-label">Difusão olfativa contínua<br><em style="font-size: 0.85em; color: #888;">(Liberação controlada fosfolipídios, PMC 2023)</em></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technical-specs">
+                    <h3>📋 Especificações Técnicas</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Composição</div>
+                            <div>Fosfolipídios 90% pureza</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Tamanho Lipossomos</div>
+                            <div>100-500 nm (ajustável)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Carga</div>
+                            <div>Vazio (pronto para encapsulação)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Capacidade</div>
+                            <div>Até 30% carga lipofílica</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Estabilidade</div>
+                            <div>pH 4-8, Temp. 2-25°C</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Aplicações</div>
+                            <div>Perfumaria fina, cosmética, home care</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>🎨 Aplicações para Robertet</h2>
+                    <div class="solution-grid">
+                        <div class="solution-card">
+                            <h4>Perfumaria Fina</h4>
+                            <ul>
+                                <li>Eau de parfum naturais longa duração</li>
+                                <li>Proteção notas preciosas (rosa, jasmim, baunilha)</li>
+                                <li>Perfumes sólidos encapsulados</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>Cosmética Funcional</h4>
+                            <ul>
+                                <li>ActiScents com liberação prolongada</li>
+                                <li>Cremes perfumados evolutivos</li>
+                                <li>Sérums com assinatura olfativa</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>Home Care Premium</h4>
+                            <ul>
+                                <li>Amaciantes alta performance</li>
+                                <li>Difusores com liberação controlada</li>
+                                <li>Velas com intensidade constante</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>Inovação P&D</h4>
+                            <ul>
+                                <li>Protocolos encapsulação cleanRscent</li>
+                                <li>Fragrâncias stimuli-responsive</li>
+                                <li>Absolutos estabilizados nova geração</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);">
+                    <h2>🚀 Próximos Passos</h2>
+                    <p><strong>1. Teste de Encapsulação</strong> - Seleção de uma fragrância assinatura Robertet (ex: baunilha Madagascar, rosa de Grasse) para primeira encapsulação</p>
+                    <p style="margin-top: 10px;"><strong>2. Validação Olfativa</strong> - Avaliação por seus perfumistas: integridade, evolução, performance</p>
+                    <p style="margin-top: 10px;"><strong>3. Protótipo Aplicação</strong> - Desenvolvimento formulação piloto (perfume, creme, têxtil)</p>
+                    <p style="margin-top: 10px;"><strong>4. Business Case</strong> - ROI, posicionamento premium, vantagem competitiva vs. Givaudan/Firmenich</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <h3>🤝 Colaboração Técnica</h3>
+                <p><strong><a href="https://www.youtube.com/watch?v=-VOM_oGm4zE&list=TLGG3GxFJD05TBEwNDEwMjAyNQ" target="_blank">Binago</a></strong> (Blumenau, Brasil) & <strong><a href="http://www.nialtec.com.br" target="_blank">Nialtec S.A.</a></strong> (Argentina)</p>
+                <p style="margin-top: 20px;">Inteligência de Negócios • Tecnologia • Inovação</p>
+                <p style="margin-top: 30px; font-size: 0.95em; opacity: 0.8;">
+                    Esta tecnologia lipossomal já é validada farmaceuticamente na Argentina.<br>
+                    Pronta para scale-up e adaptação perfumaria fina.
+                </p>
+            </div>
+        </div>
+
+        <!-- FRANÇAIS -->
+        <div id="content-fr" class="lang-content">
+            <div class="header">
+                <h1>🌿 Innovation Liposomale</h1>
+                <div class="subtitle">Solution de Pointe pour l'Encapsulation de Fragrances Naturelles Robertet</div>
+            </div>
+
+            <div class="content">
+                <div class="insight-box">
+                    <h2>💡 Insight pour Robertet</h2>
+                    <p><strong>Le défi :</strong> Les fragrances naturelles que Robertet maîtrise si bien (vanille Madagascar, absolus naturels, extraits floraux) sont les plus volatiles et fragiles. Leur stabilité et longévité restent un challenge majeur dans les formulations modernes, surtout face aux exigences de "FUTURING NATURALS" et cleanRscent.</p>
+                    <p style="margin-top: 15px;"><strong>L'opportunité :</strong> Une technologie liposomale naturelle, déjà validée pharmaceutiquement, qui peut révolutionner la façon dont vos créations naturelles sont protégées, stabilisées et libérées.</p>
+                </div>
+
+                <div class="section">
+                    <h2>🎯 Le Challenge Robertet 2025</h2>
+                    <div class="challenge-box">
+                        <h3>Vos Fragrances Naturelles Font Face à 4 Problèmes</h3>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #dc3545; font-weight: bold;">1.</span>
+                                <strong>Volatilité excessive</strong> - Les notes de tête naturelles s'évaporent trop rapidement
+                            </li>
+                            <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #dc3545; font-weight: bold;">2.</span>
+                                <strong>Oxydation</strong> - Dégradation des composés naturels fragiles (aldéhydes, terpènes)
+                            </li>
+                            <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #dc3545; font-weight: bold;">3.</span>
+                                <strong>Instabilité</strong> - Sensibilité à la lumière, chaleur et pH dans les formulations
+                            </li>
+                            <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: #dc3545; font-weight: bold;">4.</span>
+                                <strong>Incompatibilité aqueuse</strong> - Difficulté d'intégration dans les produits à base d'eau
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="claim-highlight">
+                    <h2>La Solution : LIPOSOMAS 90-PL</h2>
+                    <p><strong>Encapsulez vos fragrances naturelles dans des liposomes biomimétiques qui protègent, stabilisent et libèrent de façon contrôlée.</strong></p>
+                    <p style="margin-top: 20px; font-size: 1.1em;">Transformez un parfum qui dure 2 heures en une expérience olfactive de 12+ heures, tout en restant 100% naturel et clean.</p>
+                </div>
+
+                <div class="section">
+                    <h2>🔬 Comment ça Fonctionne</h2>
+                    <div class="solution-grid">
+                        <div class="solution-card">
+                            <h4>🛡️ Protection</h4>
+                            <ul>
+                                <li>Membrane phospholipidique protège les molécules volatiles</li>
+                                <li>Barrière contre l'oxydation et UV</li>
+                                <li>Stabilité thermique améliorée</li>
+                                <li>Conservation des notes originales</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>⏱️ Libération Contrôlée</h4>
+                            <ul>
+                                <li>Diffusion progressive sur 8-12h</li>
+                                <li>Notes de tête qui persistent</li>
+                                <li>Intensité olfactive constante</li>
+                                <li>Pas d'effet "flash and fade"</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>💧 Compatibilité Aqueuse</h4>
+                            <ul>
+                                <li>Domaines hydrophiles + lipophiles</li>
+                                <li>Intégration facile en phase aqueuse</li>
+                                <li>Stable dans les gels, lotions, sprays</li>
+                                <li>Pas de séparation de phase</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>🌿 100% Clean & Naturel</h4>
+                            <ul>
+                                <li>Phospholipides d'origine naturelle</li>
+                                <li>Biodégradable</li>
+                                <li>Compatible cleanRscent</li>
+                                <li>Aligné FUTURING NATURALS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>📊 Impact Mesurable</h2>
+                    <div class="benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-number">+300%</span>
+                            <div class="benefit-label">Longévité des notes de tête naturelles<br><em style="font-size: 0.85em; color: #888;">(Source: Liposomal encapsulation fragrance studies, BOC Sciences 2025)</em></div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-number">85%</span>
+                            <div class="benefit-label">Réduction de la volatilisation immédiate<br><em style="font-size: 0.85em; color: #888;">(Études encapsulation microparticules, Wiley 2023)</em></div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-number">12h</span>
+                            <div class="benefit-label">Diffusion olfactive continue<br><em style="font-size: 0.85em; color: #888;">(Libération contrôlée phospholipides, PMC 2023)</em></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technical-specs">
+                    <h3>📋 Spécifications Techniques</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Composition</div>
+                            <div>Phospholipides 90% pureté</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Taille Liposomes</div>
+                            <div>100-500 nm (ajustable)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Charge</div>
+                            <div>Vide (prêt pour encapsulation)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Capacité</div>
+                            <div>Jusqu'à 30% cargo lipophile</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Stabilité</div>
+                            <div>pH 4-8, Temp. 2-25°C</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Applications</div>
+                            <div>Parfumerie fine, cosmétique, home care</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>🎨 Applications pour Robertet</h2>
+                    <div class="solution-grid">
+                        <div class="solution-card">
+                            <h4>Parfumerie Fine</h4>
+                            <ul>
+                                <li>Eaux de parfum naturelles longue durée</li>
+                                <li>Protection notes précieuses (rose, jasmin, vanille)</li>
+                                <li>Parfums solides encapsulés</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>Cosmétique Fonctionnelle</h4>
+                            <ul>
+                                <li>ActiScents avec libération prolongée</li>
+                                <li>Crèmes parfumées évolutives</li>
+                                <li>Sérums avec signature olfactive</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>Home Care Premium</h4>
+                            <ul>
+                                <li>Assouplissants haute performance</li>
+                                <li>Diffuseurs à libération contrôlée</li>
+                                <li>Bougies avec intensité constante</li>
+                            </ul>
+                        </div>
+                        <div class="solution-card">
+                            <h4>Innovation R&D</h4>
+                            <ul>
+                                <li>Protocoles encapsulation cleanRscent</li>
+                                <li>Fragrances stimuli-responsive</li>
+                                <li>Absolus stabilisés nouvelle génération</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);">
+                    <h2>🚀 Prochaines Étapes</h2>
+                    <p><strong>1. Test d'Encapsulation</strong> - Sélection d'une fragrance signature Robertet (ex: vanille Madagascar, rose de Grasse) pour première encapsulation</p>
+                    <p style="margin-top: 10px;"><strong>2. Validation Olfactive</strong> - Évaluation par vos perfumeurs : intégrité, évolution, performance</p>
+                    <p style="margin-top: 10px;"><strong>3. Prototype Application</strong> - Développement formulation pilote (parfum, crème, textile)</p>
+                    <p style="margin-top: 10px;"><strong>4. Business Case</strong> - ROI, positioning premium, avantage concurrentiel vs. Givaudan/Firmenich</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <h3>🤝 Collaboration Technique</h3>
+                <p><strong><a href="https://www.youtube.com/watch?v=-VOM_oGm4zE&list=TLGG3GxFJD05TBEwNDEwMjAyNQ" target="_blank">Binago</a></strong> (Blumenau, Brésil) & <strong><a href="http://www.nialtec.com.br" target="_blank">Nialtec S.A.</a></strong> (Argentine)</p>
+                <p style="margin-top: 20px;">Intelligence d'Affaires • Technologie • Innovation</p>
+                <p style="margin-top: 30px; font-size: 0.95em; opacity: 0.8;">
+                    Cette technologie liposomale est déjà validée pharmaceutiquement en Argentine.<br>
+                    Prête pour scale-up et adaptation parfumerie fine.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            // Hide all content
+            document.querySelectorAll('.lang-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show selected content
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // Update buttons
+            document.querySelectorAll('.language-toggle button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Update page language
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'fr';
+        }
+    </script>
+</body>
+</html>
